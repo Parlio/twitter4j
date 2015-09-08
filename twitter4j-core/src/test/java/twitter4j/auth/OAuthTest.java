@@ -66,7 +66,7 @@ public class OAuthTest extends TwitterTestBase {
         build.setOAuthConsumerSecret(oAuthConsumerSecret);
         OAuthAuthorization auth = new OAuthAuthorization(build.build());
         Twitter twitter = new TwitterFactory().getInstance(auth);
-        twitter.verifyCredentials(null);
+        twitter.verifyCredentials();
     }
 
     public void testDesktopClient() throws Exception {

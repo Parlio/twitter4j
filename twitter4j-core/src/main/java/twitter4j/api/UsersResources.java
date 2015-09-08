@@ -46,7 +46,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/account/verify_credentials">GET account/verify_credentials | Twitter Developers</a>
      * @since Twitter4J 2.0.0
      */
-    User verifyCredentials(HttpParameter[] parameters) throws TwitterException;
+    User verifyCredentials() throws TwitterException;
 
     /**
      * Updates the current trend, geo, language, timezone and sleep time information for the authenticating user.

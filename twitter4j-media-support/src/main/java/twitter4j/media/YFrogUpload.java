@@ -62,7 +62,7 @@ class YFrogUpload extends AbstractImageUploadImpl {
 
         HttpParameter[] params = {
                 new HttpParameter("auth", "oauth"),
-                new HttpParameter("username", tw.verifyCredentials(null).getScreenName()),
+                new HttpParameter("username", tw.verifyCredentials().getScreenName()),
                 new HttpParameter("verify_url", signedVerifyCredentialsURL),
                 this.image,
         };

@@ -105,7 +105,7 @@ abstract class TwitterBaseImpl implements TwitterBase, java.io.Serializable, OAu
             }
             if (null == screenName) {
                 // retrieve the screen name if this instance is authenticated with OAuth or email address
-                fillInIDAndScreenName(null);
+                fillInIDAndScreenName();
             }
         }
         return screenName;
@@ -118,15 +118,15 @@ abstract class TwitterBaseImpl implements TwitterBase, java.io.Serializable, OAu
                     "Neither user ID/password combination nor OAuth consumer key/secret combination supplied");
         }
         if (0 == id) {
-            fillInIDAndScreenName(null);
+            fillInIDAndScreenName();
         }
         // retrieve the screen name if this instance is authenticated with OAuth or email address
         return id;
     }
 
-    User fillInIDAndScreenName(HttpParameter[] parameters) throws TwitterException {
+    User fillInIDAndScreenName() throws TwitterException {
         ensureAuthorizationEnabled();
-        User user = new UserJSONImpl(http.get(conf.getRestBaseURL() + "account/verify_credentials.json", parameters, auth, this), conf);
+        User user = new UserJSONImpl(http.get(conf.getRestBaseURL() + "account/verify_credentials.json", null, auth, this), conf);
         this.screenName = user.getScreenName();
         this.id = user.getId();
         return user;

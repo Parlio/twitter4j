@@ -148,14 +148,14 @@ public class UsersResourcesTest extends TwitterTestBase {
 
     public void testBanner() throws Exception {
         twitter1.updateProfileBanner(getRandomlyChosenFile(banners));
-        User user = twitter1.verifyCredentials(null);
+        User user = twitter1.verifyCredentials();
         if (user.getProfileBannerURL() != null) {
             twitter1.removeProfileBanner();
         }
     }
 
     public void testAccountMethods() throws Exception {
-        User original = twitter1.verifyCredentials(null);
+        User original = twitter1.verifyCredentials();
         assertNotNull(TwitterObjectFactory.getRawJSON(original));
         assertEquals(original, TwitterObjectFactory.createUser(TwitterObjectFactory.getRawJSON(original)));
         if (original.getScreenName().endsWith("new") ||

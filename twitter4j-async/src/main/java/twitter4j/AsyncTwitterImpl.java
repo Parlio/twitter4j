@@ -925,7 +925,7 @@ class AsyncTwitterImpl extends TwitterBaseImpl implements AsyncTwitter {
         getDispatcher().invokeLater(new AsyncTask(VERIFY_CREDENTIALS, listeners) {
             @Override
             public void invoke(List<TwitterListener> listeners) throws TwitterException {
-                User user = twitter.verifyCredentials(null);
+                User user = twitter.verifyCredentials();
                 for (TwitterListener listener : listeners) {
                     try {
                         listener.verifiedCredentials(user);

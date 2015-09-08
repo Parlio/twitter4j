@@ -80,7 +80,7 @@ public class PlaceGeoResourcesTest extends TwitterTestBase {
         assertTrue(withgeo.getUser().isGeoEnabled());
         assertEquals(LATITUDE, withgeo.getGeoLocation().getLatitude());
         assertEquals(LONGITUDE, withgeo.getGeoLocation().getLongitude());
-        assertFalse(twitter2.verifyCredentials(null).isGeoEnabled());
+        assertFalse(twitter2.verifyCredentials().isGeoEnabled());
     }
 
 }

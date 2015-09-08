@@ -101,9 +101,9 @@ public class TwitterTest extends TwitterTestBase {
 
     public void testGetAccessLevel() throws Exception {
         TwitterResponse response;
-        response = twitter1.verifyCredentials(null);
+        response = twitter1.verifyCredentials();
         assertEquals(TwitterResponse.READ_WRITE, response.getAccessLevel());
-        response = rwPrivateMessage.verifyCredentials(null);
+        response = rwPrivateMessage.verifyCredentials();
         assertEquals(TwitterResponse.READ_WRITE_DIRECTMESSAGES, response.getAccessLevel());
     }
 

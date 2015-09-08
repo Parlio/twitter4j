@@ -324,7 +324,7 @@ public class AsyncTwitterTest extends TwitterTestBase implements TwitterListener
         waitForResponse();
         assertEquals("", "@" + id1.screenName + " " + date, status.getText());
         assertEquals("", id, status.getInReplyToStatusId());
-        assertEquals(twitter1.verifyCredentials(null).getId(), status.getInReplyToUserId());
+        assertEquals(twitter1.verifyCredentials().getId(), status.getInReplyToUserId());
 
 
         id = status.getId();

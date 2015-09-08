@@ -31,7 +31,6 @@ import java.util.Date;
     private static final long serialVersionUID = -5448266606847617015L;
     private long id;
     private String name;
-    private String email;
     private String screenName;
     private String location;
     private String description;
@@ -99,7 +98,6 @@ import java.util.Date;
         try {
             id = ParseUtil.getLong("id", json);
             name = ParseUtil.getRawString("name", json);
-            email = ParseUtil.getRawString("email", json);
             screenName = ParseUtil.getRawString("screen_name", json);
             location = ParseUtil.getRawString("location", json);
 
@@ -209,11 +207,6 @@ import java.util.Date;
     @Override
     public String getName() {
         return name;
-    }
-    
-    @Override
-    public String getEmail() {
-        return email;
     }
 
     @Override
@@ -566,7 +559,6 @@ import java.util.Date;
         return "UserJSONImpl{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
                 ", screenName='" + screenName + '\'' +
                 ", location='" + location + '\'' +
                 ", description='" + description + '\'' +
